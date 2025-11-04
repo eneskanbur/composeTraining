@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.MaterialTheme
@@ -14,6 +15,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
 import com.knbrgns.composetraining.ui.theme.ComposeTrainingTheme
 
 class MainActivity : ComponentActivity() {
@@ -31,9 +33,14 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun MyBusinessCard(name: String, title: String, color: Color = Color.Black, modifier: Modifier = Modifier) {
-    Text(text = name, color = color)
-    Text(text = title, color = Color.Green)
+fun MyBusinessCard(
+    name: String,
+    title: String,
+    color: Color = Color.Black,
+    modifier: Modifier = Modifier
+) {
+    Text(text = name, color = color, modifier = modifier.background(Color.Black))
+    Text(text = title, color = Color.Green, modifier = modifier)
 
 }
 
@@ -41,6 +48,11 @@ fun MyBusinessCard(name: String, title: String, color: Color = Color.Black, modi
 @Composable
 fun MyBusinessCardPreview() {
     Surface(color = MaterialTheme.colorScheme.primary, modifier = Modifier.fillMaxSize()) {
-        MyBusinessCard(name = "Enes", title = "Android Developer", color = Color.Red)
+        MyBusinessCard(
+            name = "Enes",
+            title = "Android Developer",
+            color = Color.Red,
+            modifier = Modifier.padding(16.dp)
+        )
     }
 }
