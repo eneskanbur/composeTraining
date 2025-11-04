@@ -45,7 +45,30 @@ fun MyBusinessCard(
 
 }
 
-@Preview(showBackground = true)
+@Composable
+fun NameSection(
+    name: String,
+    modifier: Modifier = Modifier
+){
+    Text(
+        text = name,
+        style = MaterialTheme.typography.headlineLarge,
+        modifier = modifier.padding(all= 8.dp)
+    )
+}
+
+@Composable
+fun ProfessionSection(){
+
+}
+
+@Composable
+fun ContactSection(){
+
+}
+
+
+/*@Preview(showBackground = true)
 @Composable
 fun MyBusinessCardPreview() {
     Surface(color = MaterialTheme.colorScheme.primary, modifier = Modifier.fillMaxSize()) {
@@ -63,4 +86,4 @@ fun MyBusinessCardPreview() {
             modifier = Modifier.padding(46.dp)
         )
     }
-}
+}*/
