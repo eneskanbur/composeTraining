@@ -58,14 +58,70 @@ fun NameSection(
 }
 
 @Composable
-fun ProfessionSection(){
-
+fun ProfessionSection(
+    profession: String,
+    modifier: Modifier = Modifier
+){
+    Text(
+        text = profession,
+        style = MaterialTheme.typography.bodyLarge,
+        modifier = modifier.padding(all= 8.dp)
+    )
 }
 
 @Composable
-fun ContactSection(){
+fun ContactSection(
+    email: String,
+    phone: String,
+    modifier: Modifier = Modifier
+){
+    Text(
+        text = email,
+        style = MaterialTheme.typography.bodyMedium,
+        modifier = modifier.padding(all = 8.dp)
+    )
 
+    Text(
+        text = phone,
+        style = MaterialTheme.typography.bodyMedium,
+        modifier = modifier.padding(all = 8.dp)
+    )
 }
+
+@Composable
+fun ModularBusinessCard(){
+    NameSection(name = "Enes")
+    ProfessionSection(profession = "Software Engineer")
+    ContactSection(email = "kanburenes02@gmail.com", phone = "+905076333337")
+}
+
+@Preview(showBackground = true)
+@Composable
+fun MyBusinessCardPreview() {
+    Surface(modifier = Modifier.fillMaxSize()){
+        ModularBusinessCard()
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun NameSectionPreview() {
+        NameSection(name = "Enes")
+}
+
+@Preview(showBackground = true)
+@Composable
+fun ProfessionSectionPreview() {
+    ProfessionSection(profession = "Software Engineer")
+}
+
+@Preview(showBackground = true)
+@Composable
+fun ContactSectionPreview() {
+    ContactSection(email = "kanburenes02@gmail.com", phone = "+905076333337")
+}
+
+
 
 
 /*@Preview(showBackground = true)
